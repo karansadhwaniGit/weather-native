@@ -29,7 +29,7 @@ class functionality {
           this.location.latitude + 0.0003007
         }&lon=${
           this.location.longitude - 0.0002111
-        }&format=json&apiKey=4df3f7d181104b7e839ae3a89fd67180`
+        }&format=json&apiKey=YOUR_KEY_HERE`
       )
       .then(async (response) => {
         try {
@@ -47,7 +47,7 @@ class functionality {
     this.naviagtor = naviagtor;
     await axios
       .get(
-        `https://api.geoapify.com/v1/geocode/search?text=${city}&apiKey=4df3f7d181104b7e839ae3a89fd67180`
+        `https://api.geoapify.com/v1/geocode/search?text=${city}&apiKey=YOUR_KEY_HERE`
       )
       .then(async (response) => {
         try {
@@ -76,7 +76,7 @@ class functionality {
     }
     await axios({
       method: "get",
-      url: `https://api.openweathermap.org/data/2.5/weather?lat=${this.location.latitude}&lon=${this.location.longitude}&appid=52378f47189b16a4f567e1625c482c3f&units=metric`,
+      url: `https://api.openweathermap.org/data/2.5/weather?lat=${this.location.latitude}&lon=${this.location.longitude}&appid=YOUR_KEY_HERE&units=metric`,
     })
       .then(async (response) => {
         try {
@@ -100,7 +100,7 @@ class functionality {
       await loc.locationCurrent();
       this.location = await (await Location.getCurrentPositionAsync()).coords;
     }
-    url = `https://api.openweathermap.org/data/2.5/onecall?lat=${this.location.latitude}&lon=${this.location.longitude}&exclude=hourly,minutely&appid=27bba5998035e8aed7150511d5aae4f9&units=metric`;
+    url = `https://api.openweathermap.org/data/2.5/onecall?lat=${this.location.latitude}&lon=${this.location.longitude}&exclude=hourly,minutely&appid=YOUR_KEY_HERE&units=metric`;
     console.log(url);
     await axios({
       method: "get",
@@ -124,7 +124,7 @@ class functionality {
     this.location = await (await Location.getCurrentPositionAsync()).coords;
     await axios({
       method: "get",
-      url: `https://api.openweathermap.org/data/2.5/air_pollution?lat=${this.location.latitude}&lon=${this.location.longitude}&exclude=hourly,minutely&appid=27bba5998035e8aed7150511d5aae4f9&units=metric`,
+      url: `https://api.openweathermap.org/data/2.5/air_pollution?lat=${this.location.latitude}&lon=${this.location.longitude}&exclude=hourly,minutely&appid=YOUR_KEY_HERE&units=metric`,
     })
       .then(async (response) => {
         try {
